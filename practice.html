@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading Practice Tests</title>
+    <title>Practice Test</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const testName = urlParams.get('test');
+            document.getElementById("test-name").innerText = testName ? testName.replace(/\d+/g, '') + " Test" : "Practice Test";
+        };
+    </script>
 </head>
 <body>
-    <h1>Select a Reading Practice Test</h1>
-    <ul>
-        <li><a href="practice.html?test=reading1">Practice Test 1</a></li>
-        <li><a href="practice.html?test=reading2">Practice Test 2</a></li>
-    </ul>
+    <h1 id="test-name">Practice Test</h1>
+    <p>Question will be displayed here.</p>
+    <a href="index.html">Back to Home</a>
 </body>
 </html>
